@@ -43,6 +43,12 @@ Use the following URLs to access the static API endpoints. These are the URLs yo
     https://Criscras13.github.io/API_testing/api/v2/help_center/en-us/articles.json
     ```
 
+*   **Individual Articles**:
+    Individual articles are accessible via their ID. The `html_url` field in the article lists has been rewritten to point to these JSON endpoints to allow AI agents to "browse" the content.
+    ```
+    https://Criscras13.github.io/API_testing/api/v2/help_center/en-us/articles/{id}.json
+    ```
+
 ## Updating Data
 
 To update the data served by this API:
@@ -55,9 +61,9 @@ To update the data served by this API:
     *Note: This script requires internet access to reach `support.knowbe4.com`.*
 
 2.  **Commit and Push**:
-    After the script completes, commit the updated files in `site_src/data/zendesk/` and push to the `main` branch.
+    After the script completes, commit the updated files in `site_src/data/zendesk/` and `site_src/static/` and push to the `main` branch.
     ```bash
-    git add site_src/data/zendesk/
+    git add site_src/data/zendesk/ site_src/static/
     git commit -m "Update API data"
     git push origin main
     ```
