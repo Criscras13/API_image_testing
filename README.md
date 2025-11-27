@@ -1,6 +1,6 @@
-# KnowBe4 Static API Replica
+# Static API Replica
 
-This project is a static replica of the KnowBe4 Help Center API (Zendesk V2), built using [Hugo](https://gohugo.io/) and hosted on GitHub Pages. It serves static JSON files that mimic the structure and content of the real API endpoints.
+This project is a static replica of the a Help Center API (Zendesk V2), built using [Hugo](https://gohugo.io/) and hosted on GitHub Pages. It serves static JSON files that mimic the structure and content of the real API endpoints.
 
 ## How It Works
 
@@ -8,7 +8,7 @@ This project is a static replica of the KnowBe4 Help Center API (Zendesk V2), bu
     *   `categories.json`
     *   `sections.json`
     *   `articles.json`
-    These files contain the actual data fetched from the KnowBe4 Help Center.
+    These files contain the actual data fetched from the Help Center.
 
 2.  **Hugo Templating**: Hugo uses layout templates located in `site_src/layouts/api/` to process this data.
     *   Instead of rendering HTML, these templates use Hugo's `jsonify` function to output the data directly as valid JSON.
@@ -85,11 +85,11 @@ These JSON endpoints serve raw JSON data with `application/json` content type.
 To update the data served by this API:
 
 1.  **Run the Data Transformer**:
-    This project includes a Python script `data_transformer.py` that fetches fresh data from the KnowBe4 API, rewrites the URLs to point to this GitHub Pages site, and saves both JSON files (for API clients) and HTML wrapper files (for AI browsing tools).
+    This project includes a Python script `data_transformer.py` that fetches fresh data from the API, rewrites the URLs to point to this GitHub Pages site, and saves both JSON files (for API clients) and HTML wrapper files (for AI browsing tools).
     ```bash
     python data_transformer.py
     ```
-    *Note: This script requires internet access to reach `support.knowbe4.com`.*
+    *Note: This script requires internet access to reach `the supporting site`.*
 
 2.  **Commit and Push**:
     After the script completes, commit the updated files in `site_src/data/zendesk/` and `site_src/static/` and push to the `main` branch.
