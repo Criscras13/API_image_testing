@@ -55,12 +55,34 @@ def save_html_wrapper(item, resource_name, item_id):
     with open(os.path.join(OUTPUT_DIR, resource_name, f"{item_id}.html"), 'w', encoding='utf-8') as f:
         f.write(html_content)
 
+def transform_body_content(body_content):
+    if not body_content:
+        return body_content
+        
+    # Replace links to other articles
+    # Pattern: https://support.knowbe4.com/hc/en-us/articles/123456789
+    # Target: GITHUB_URL/articles/123456789.html
+    
+    def replace_article_link(match):
+        article_id = match.group(2)
+        return f"{GITHUB_URL}/articles/{article_id}.html"
+        
+    # Regex for article links (support.knowbe4.com or knowbe4.zendesk.com)
+    # Matches: https://.../articles/{id}{optional-slug}
+    # We capture the ID in group 2
+    body_content = re.sub(r'https://(support\.knowbe4\.com|knowbe4\.zendesk\.com)/hc/en-us/articles/(\d+)[^"\s<]*', replace_article_link, body_content)
+    
+    return body_content
+
 def transform_item(item, resource_name):
     if 'url' in item:
         item['url'] = transform_url(item['url'])
     
     if 'html_url' in item and 'id' in item:
         item['html_url'] = transform_html_url(item['html_url'], item['id'], resource_name)
+        
+    if 'body' in item:
+        item['body'] = transform_body_content(item['body'])
         
     return item
 
