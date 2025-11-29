@@ -21,7 +21,75 @@ STOP_WORDS = {
     'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
     'of', 'with', 'by', 'from', 'is', 'are', 'was', 'were', 'be', 'been',
     'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would',
-    'should', 'could', 'may', 'might', 'must', 'can', 'this', 'that'
+    'should', 'could', 'may', 'might', 'must', 'can', 'this', 'that',
+    # UI/Common terms to ignore
+    'image', 'picture', 'screenshot', 'display', 'displayed', 'showing', 'shows',
+    'located', 'visible', 'click', 'button', 'icon', 'menu', 'select', 'enter',
+    'type', 'field', 'tab', 'page', 'screen', 'window', 'left', 'right', 'top',
+    'bottom', 'below', 'above', 'next', 'previous', 'user', 'interface', 'context',
+    'panel', 'header', 'footer', 'sidebar', 'option', 'options', 'value', 'input',
+    'text', 'box', 'list', 'item', 'link', 'url', 'http', 'https', 'www', 'com',
+    'net', 'org', 'edu', 'gov', 'mil', 'int', 'info', 'biz', 'name', 'file',
+    'folder', 'directory', 'path', 'drive', 'disk', 'data', 'database', 'table',
+    'row', 'column', 'cell', 'record', 'entry', 'form', 'report', 'chart', 'graph',
+    'plot', 'diagram', 'figure', 'map', 'plan', 'layout', 'structure', 'design',
+    'style', 'format', 'color', 'size', 'width', 'height', 'length', 'weight',
+    'position', 'location', 'area', 'region', 'zone', 'sector', 'part', 'portion',
+    'segment', 'piece', 'bit', 'byte', 'kilobyte', 'megabyte', 'gigabyte', 'terabyte',
+    'second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'date', 'time',
+    'now', 'then', 'when', 'where', 'why', 'how', 'what', 'who', 'whom', 'whose',
+    'which', 'whichever', 'whatever', 'whenever', 'wherever', 'however', 'therefore',
+    'thus', 'hence', 'so', 'because', 'since', 'as', 'if', 'unless', 'until', 'while',
+    'although', 'though', 'even', 'just', 'only', 'also', 'too', 'very', 'much', 'many',
+    'more', 'most', 'less', 'least', 'few', 'fewer', 'fewest', 'all', 'any', 'some',
+    'none', 'no', 'yes', 'not', 'never', 'always', 'often', 'usually', 'sometimes',
+    'rarely', 'seldom', 'perhaps', 'maybe', 'possibly', 'probably', 'likely', 'unlikely',
+    'certainly', 'definitely', 'absolutely', 'really', 'truly', 'actually', 'fact',
+    'truth', 'reality', 'world', 'life', 'death', 'birth', 'beginning', 'end', 'start',
+    'stop', 'finish', 'complete', 'continue', 'pause', 'resume', 'restart', 'reset',
+    'clear', 'delete', 'remove', 'add', 'create', 'make', 'build', 'construct', 'form',
+    'shape', 'mold', 'cast', 'cut', 'paste', 'copy', 'move', 'go', 'come', 'stay',
+    'leave', 'return', 'enter', 'exit', 'open', 'close', 'shut', 'lock', 'unlock',
+    'block', 'unblock', 'allow', 'deny', 'permit', 'forbid', 'prohibit', 'ban',
+    'restrict', 'limit', 'bound', 'confine', 'contain', 'include', 'exclude',
+    'involve', 'consist', 'compose', 'comprise', 'constitute', 'represent', 'stand',
+    'symbolize', 'signify', 'mean', 'indicate', 'suggest', 'imply', 'infer', 'deduce',
+    'conclude', 'decide', 'determine', 'judge', 'assess', 'evaluate', 'estimate',
+    'calculate', 'compute', 'measure', 'count', 'number', 'figure', 'digit', 'letter',
+    'character', 'symbol', 'sign', 'mark', 'note', 'memo', 'record', 'log', 'journal',
+    'diary', 'book', 'paper', 'document', 'file', 'folder', 'archive', 'library',
+    'collection', 'set', 'group', 'batch', 'lot', 'bundle', 'pack', 'package', 'parcel',
+    'box', 'case', 'crate', 'bin', 'bag', 'sack', 'container', 'vessel', 'holder',
+    'carrier', 'transport', 'vehicle', 'car', 'truck', 'van', 'bus', 'train', 'plane',
+    'ship', 'boat', 'bike', 'cycle', 'ride', 'drive', 'fly', 'sail', 'walk', 'run',
+    'jog', 'hike', 'climb', 'swim', 'dive', 'jump', 'leap', 'hop', 'skip', 'dance',
+    'sing', 'play', 'act', 'perform', 'work', 'labor', 'toil', 'job', 'task', 'duty',
+    'role', 'function', 'purpose', 'goal', 'aim', 'target', 'objective', 'end',
+    'result', 'outcome', 'effect', 'consequence', 'impact', 'influence', 'power',
+    'force', 'energy', 'strength', 'might', 'ability', 'capacity', 'capability',
+    'potential', 'possibility', 'opportunity', 'chance', 'luck', 'fortune', 'fate',
+    'destiny', 'karma', 'kismet', 'doom', 'gloom', 'disaster', 'catastrophe',
+    'tragedy', 'comedy', 'drama', 'story', 'tale', 'legend', 'myth', 'fable',
+    'parable', 'allegory', 'metaphor', 'simile', 'analogy', 'comparison', 'contrast',
+    'difference', 'similarity', 'likeness', 'resemblance', 'match', 'pair', 'couple',
+    'twin', 'clone', 'copy', 'duplicate', 'replica', 'model', 'example', 'sample',
+    'specimen', 'instance', 'case', 'illustration', 'demonstration', 'proof',
+    'evidence', 'testimony', 'witness', 'judge', 'jury', 'trial', 'court', 'law',
+    'rule', 'regulation', 'statute', 'ordinance', 'decree', 'order', 'command',
+    'mandate', 'directive', 'instruction', 'direction', 'guide', 'guideline',
+    'policy', 'procedure', 'process', 'method', 'technique', 'strategy', 'tactic',
+    'plan', 'scheme', 'plot', 'conspiracy', 'secret', 'mystery', 'puzzle', 'riddle',
+    'enigma', 'problem', 'issue', 'matter', 'affair', 'concern', 'worry', 'trouble',
+    'difficulty', 'hardship', 'struggle', 'fight', 'battle', 'war', 'conflict',
+    'clash', 'dispute', 'argument', 'debate', 'discussion', 'conversation', 'talk',
+    'chat', 'speech', 'lecture', 'sermon', 'address', 'presentation', 'report',
+    'statement', 'declaration', 'announcement', 'proclamation', 'message', 'note',
+    'letter', 'email', 'memo', 'text', 'post', 'comment', 'review', 'feedback',
+    'opinion', 'view', 'idea', 'thought', 'concept', 'notion', 'theory', 'hypothesis',
+    'guess', 'hunch', 'feeling', 'emotion', 'sentiment', 'passion', 'desire', 'wish',
+    'hope', 'dream', 'fantasy', 'imagination', 'creativity', 'innovation', 'invention',
+    'discovery', 'exploration', 'adventure', 'journey', 'voyage', 'trip', 'tour',
+    'travel', 'expedition', 'mission', 'quest', 'search', 'hunt', 'chase', 'pursuit'
 }
 
 
@@ -100,24 +168,36 @@ def extract_keywords(text):
     if not text:
         return []
     text = re.sub(r'<[^>]+>', '', text)
-    words = re.findall(r'\b[a-zA-Z][a-zA-Z0-9_-]*\b', text)
+    # Only allow alphabetic characters for topics to avoid "10103021848723" etc.
+    words = re.findall(r'\b[a-zA-Z]{3,}\b', text)
     return words
 
 
-def extract_topics(article_title, section_name, category_name, image_descriptions):
-    """Generate topic keywords."""
+def extract_topics(article_title, section_name, category_name, image_descriptions=None):
+    """Generate topic keywords from high-value metadata only."""
     topics = set()
+    
+    # Priority 1: Article Title (High value)
     topics.update(extract_keywords(article_title))
+    
+    # Priority 2: Section & Category (Context)
     if section_name:
         topics.update(extract_keywords(section_name))
     if category_name:
         topics.update(extract_keywords(category_name))
-    for desc in image_descriptions:
-        topics.update(extract_keywords(desc))
+        
+    # NOTE: Intentionally NOT using image_descriptions for topics anymore
+    # to avoid "bag of words" noise. Descriptions are still available
+    # in the 'images' array for full-text search if needed.
     
-    topics = {t.lower() for t in topics if t.lower() not in STOP_WORDS}
-    topics = {t for t in topics if len(t) > 2 and not t.isdigit()}
-    return sorted(list(topics))
+    # Filter topics
+    final_topics = set()
+    for t in topics:
+        t_lower = t.lower()
+        if t_lower not in STOP_WORDS and not t.isdigit():
+            final_topics.add(t_lower)
+            
+    return sorted(list(final_topics))
 
 
 def load_section_and_category_mapping():

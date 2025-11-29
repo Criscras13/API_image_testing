@@ -74,9 +74,7 @@
       "configuration",
       "direct",
       "dmi",
-      "guide",
-      "injection",
-      "message"
+      "injection"
     ],
     "image_count": 5
   }

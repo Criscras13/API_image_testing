@@ -40,6 +40,9 @@ Use these URLs for your AI Agents (GEMs). They work exactly like your production
     ```
     https://Criscras13.github.io/API_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/{id}.html
     ```
+    *(Replace `{id}` with an actual article ID, e.g., `10103021848723`)*
+    
+    **Example:** [Article 10103021848723](https://Criscras13.github.io/API_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/10103021848723.html)
 
 ### **Testing Endpoints (JSON for Developers)**
 

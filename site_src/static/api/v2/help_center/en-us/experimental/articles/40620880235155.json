@@ -45,9 +45,7 @@
     "category": "Prevent",
     "section": "Deployment",
     "topics": [
-      "add-in",
       "deployment",
-      "guide",
       "prevent",
       "web"
     ],

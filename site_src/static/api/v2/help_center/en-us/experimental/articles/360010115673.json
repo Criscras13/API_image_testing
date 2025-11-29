@@ -45,13 +45,11 @@
     "section": "Customization",
     "topics": [
       "alert",
-      "button",
       "change",
       "customization",
       "mobile",
       "pab",
-      "phish",
-      "text"
+      "phish"
     ],
     "image_count": 1
   }
