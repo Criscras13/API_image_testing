@@ -1,0 +1,45 @@
+# Git files
+.git
+.gitignore
+.github
+
+# Build outputs
+public/
+resources/
+.hugo_build.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation (not needed in containers)
+README.md
+TECHNICAL_RESEARCH_STUDY.md
+DOCKER.md
+*.md
+
+# Docker files (don't copy into containers)
+Dockerfile*
+docker-compose.yml
+.dockerignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Node modules if you have any
+node_modules/
+
+# Helper scripts
+*.sh
+*.bat

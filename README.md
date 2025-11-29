@@ -101,3 +101,56 @@ To update the data served by this API:
 
 3.  **Automatic Deployment**:
     The GitHub Actions workflow will automatically rebuild the site and deploy the updated data to GitHub Pages.
+
+## 🐳 Docker Setup (Optional)
+
+Docker support is available for local development and testing. This makes it easy to work on the project without installing Hugo or Python locally.
+
+### Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) installed
+- Docker Compose (included with Docker Desktop)
+
+### Quick Start with Docker
+
+#### Fetch Fresh API Data
+```bash
+# Linux/Mac
+./update-data.sh
+
+# Windows
+update-data.bat
+```
+
+#### Run Local Hugo Server
+```bash
+# Linux/Mac
+./serve-local.sh
+
+# Windows
+serve-local.bat
+
+# Visit http://localhost:1313 to view your site
+```
+
+#### Build Static Site
+```bash
+# Linux/Mac
+./build-site.sh
+
+# Windows
+build-site.bat
+```
+
+### Why Use Docker?
+
+✅ **Consistent Environment:** Same Hugo version and Python dependencies for everyone  
+✅ **No Local Installation:** Don't need to install Hugo or Python on your machine  
+✅ **Easy Testing:** Test changes locally before pushing to GitHub  
+✅ **Isolation:** Won't conflict with other projects
+
+### Traditional Workflow (Still Works!)
+
+The traditional workflow (running `data_transformer.py` directly and using GitHub Actions for deployment) continues to work unchanged. Docker is purely optional for local development.
+
+**For detailed Docker documentation, see [DOCKER.md](DOCKER.md).**

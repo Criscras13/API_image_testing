@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Service 1: Data Transformer (run independently)
+  transformer:
+    build:
+      context: .
+      dockerfile: Dockerfile.transformer
+    volumes:
+      # Mount local directories to container
+      - ./site_src/static:/app/site_src/static
+    environment:
+      # Add any environment variables your script needs
+      - PYTHONUNBUFFERED=1
+    profiles:
+      - transformer
+    # This service won't start automatically, must be explicitly called
+
+  # Service 2: Hugo Server (run independently)
+  hugo:
+    build:
+      context: .
+      dockerfile: Dockerfile.hugo
+    ports:
+      - "1313:1313"
+    volumes:
+      # Mount your Hugo site source
+      - ./site_src:/src
+    profiles:
+      - hugo
+    # This service won't start automatically, must be explicitly called
+
+  # Service 3: Hugo Build (one-time build, no server)
+  hugo-build:
+    build:
+      context: .
+      dockerfile: Dockerfile.hugo
+    volumes:
+      - ./site_src:/src
+      - ./public:/src/public
+    command: ["--minify"]
+    profiles:
+      - build

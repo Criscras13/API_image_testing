@@ -1,0 +1,14 @@
+# Use official Hugo image with extended version
+FROM klakegg/hugo:0.120.4-ext-alpine
+
+# Set working directory
+WORKDIR /src
+
+# Expose port for Hugo server
+EXPOSE 1313
+
+# Volume mount points
+VOLUME ["/src"]
+
+# Default command: run Hugo server
+CMD ["server", "--bind", "0.0.0.0", "--baseURL", "http://localhost:1313"]
