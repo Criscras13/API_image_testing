@@ -6,7 +6,7 @@
 
 ## 🚀 Overview
 
-This repository hosts a **visually enriched** version of the KnowBe4 Help Center documentation. Unlike standard text-only APIs, this dataset includes:
+This repository hosts a **visually enriched** version of the Help Center documentation. Unlike standard text-only APIs, this dataset includes:
 
 *   **AI-Generated Image Descriptions:** Every screenshot in the documentation has been analyzed by Google's Gemini Flash model to generate detailed textual descriptions of UI elements, buttons, and layouts.
 *   **Visual Search Index:** A reverse index that maps semantic topics (e.g., "Webhooks", "Dashboard", "Phishing") to specific images, allowing AI agents to "search" for visual content.
