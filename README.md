@@ -23,22 +23,22 @@ Use these URLs for your AI Agents (GEMs). They work exactly like your production
 
 *   **Experimental Articles List:**
     ```
-    https://Criscras13.github.io/API_testing/api/v2/help_center/en-us/experimental/articles.html
+    https://Criscras13.github.io/API_testing/site_src/static/api/v2/help_center/en-us/experimental/articles.html
     ```
 
 *   **Image Index (New!):**
     ```
-    https://Criscras13.github.io/API_testing/api/v2/help_center/en-us/experimental/image_index.html
+    https://Criscras13.github.io/API_testing/site_src/static/api/v2/help_center/en-us/experimental/image_index.html
     ```
 
 *   **Topic Index (New!):**
     ```
-    https://Criscras13.github.io/API_testing/api/v2/help_center/en-us/experimental/topics_to_images.html
+    https://Criscras13.github.io/API_testing/site_src/static/api/v2/help_center/en-us/experimental/topics_to_images.html
     ```
 
 *   **Experimental Article Detail:**
     ```
-    https://Criscras13.github.io/API_testing/api/v2/help_center/en-us/experimental/articles/{id}.html
+    https://Criscras13.github.io/API_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/{id}.html
     ```
 
 ### **Testing Endpoints (JSON for Developers)**
