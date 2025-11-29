@@ -11,7 +11,7 @@ from collections import defaultdict
 import html
 
 # Configuration
-BASE_URL = "https://Criscras13.github.io/API_testing/site_src/static"
+BASE_URL = "https://Criscras13.github.io/API_image_testing/site_src/static"
 BASE_DIR = Path("site_src/static/api/v2/help_center/en-us")
 ARTICLES_DIR = BASE_DIR / "articles"
 EXPERIMENTAL_DIR = BASE_DIR / "experimental"
