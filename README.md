@@ -1,48 +1,53 @@
 # API Image Testing Repository
 
-> **Note:** This is a dedicated testing repository for AI-Enhanced Knowledge Base features. It hosts a static API with advanced image indexing and visual search capabilities.
+> **Experimental Repository** - AI-Enhanced Knowledge Base with Visual Search
 
 ---
 
 ## 🚀 Overview
 
-This repository hosts a **visually enriched** version of the Help Center documentation. Unlike standard text-only APIs, this dataset includes:
+This repository demonstrates advanced AI-powered documentation indexing using **Gemini Flash 2.0** for visual content analysis. Every screenshot in the KnowBe4 Help Center has been enriched with detailed AI-generated descriptions, enabling semantic visual search.
 
-*   **AI-Generated Image Descriptions:** Every screenshot in the documentation has been analyzed by Google's Gemini Flash model to generate detailed textual descriptions of UI elements, buttons, and layouts.
-*   **Visual Search Index:** A reverse index that maps semantic topics (e.g., "Webhooks", "Dashboard", "Phishing") to specific images, allowing AI agents to "search" for visual content.
-*   **Enhanced Article Metadata:** Articles are served as structured JSON objects containing both the standard body text and a rich `images` array with context and captions.
+### Key Features
 
-## 🔗 API Endpoints
-
-This repository serves a static API via GitHub Pages. You can access the data using the following endpoints:
-
-### **1. Visual Search Index**
-Use this to find images related to a specific topic.
-*   **URL:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/topics_to_images.html`
-*   **Format:** HTML (optimized for AI browsing) or JSON.
-*   **Usage:** Search the page for a keyword (e.g., "console") to get a list of relevant Image IDs.
-
-### **2. Master Image Metadata**
-Use this to look up details for a specific Image ID.
-*   **URL:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/image_index.html`
-*   **Format:** HTML (optimized for AI browsing) or JSON.
-*   **Usage:** Find an Image ID (e.g., `115015198248_1`) to see its full AI description, the article it belongs to, and the surrounding text context.
-
-### **3. Enhanced Articles List**
-Use this to browse all available articles in the enhanced format.
-*   **URL:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles.html`
-*   **Format:** HTML list of links.
-
-### **4. Enhanced Article Detail**
-Access the full data for a specific article.
-*   **URL Pattern:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/{article_id}.html`
-*   **Example:** [Article 115015198248 (Smart Groups)](https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/115015198248.html)
+*   **3,519 AI-Described Images** - Every screenshot analyzed by Gemini Flash with detailed descriptions of UI elements, buttons, and workflows
+*   **640 Searchable Topics** - Semantic topic index mapping keywords to relevant images
+*   **1,004 Enhanced Articles** - Complete article metadata with embedded image context
+*   **Zero-Cost Deployment** - Static API hosted on GitHub Pages
 
 ---
 
-## 🛠 Data Structure
+## 🔗 Live API Endpoints
 
-### **Enhanced Article Object**
+Access the enriched data via GitHub Pages:
+
+### **Visual Search Index**
+Find images by topic keyword.
+*   **URL:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/topics_to_images.html`
+*   **Format:** HTML (AI-optimized) or JSON
+*   **Usage:** Search for a keyword (e.g., "webhooks") to get Image IDs
+
+### **Image Metadata Index**
+Look up full details for specific Image IDs.
+*   **URL:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/image_index.html`
+*   **Format:** HTML (AI-optimized) or JSON
+*   **Contains:** AI descriptions, article context, image URLs
+
+### **Enhanced Articles List**
+Browse all enriched articles.
+*   **URL:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles.html`
+*   **Format:** HTML list with direct links
+
+### **Enhanced Article Detail**
+Access individual article data.
+*   **URL Pattern:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/{article_id}.html`
+*   **Example:** [Smart Groups Quickstart](https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles/115015198248.html)
+
+---
+
+## 📊 Data Structure
+
+### Enhanced Article Example
 ```json
 {
   "id": 115015198248,
@@ -52,28 +57,88 @@ Access the full data for a specific article.
     {
       "url": "https://helpimg.s3.us-east-1.amazonaws.com/...",
       "alt": "Screenshot of the Smart Group Criteria Modal showing...",
-      "description": "A modal window titled 'Smart Group Criteria'. It contains dropdowns for...",
-      "position": 1
+      "description": "Detailed AI-generated description of UI elements...",
+      "position": 1,
+      "context": "Surrounding text from article..."
     }
   ],
   "metadata": {
-    "topics": ["smart", "groups", "criteria", "modal"]
+    "category": "Security Awareness Training",
+    "section": "Smart Groups",
+    "topics": ["smart", "groups", "criteria", "modal"],
+    "image_count": 27
   }
 }
 ```
 
 ---
 
-## 📖 Documentation
+## 🤖 AI Agent Integration
 
-For a deep dive into the architecture, design decisions, and how the AI enrichment pipeline works, please read the **[Technical Research Study](TECHNICAL_RESEARCH_STUDY.md)** included in this repository.
+### Gemini (GEM) Configuration
 
-## 🤖 Agent Instructions
+Use these URLs as "Authorized Knowledge Sources":
 
-To use this repository with an AI agent (like a GEM), configure it with the following knowledge sources:
+1.  **Articles List:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles.html`
+2.  **Visual Search Index:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/topics_to_images.html`
+3.  **Image Metadata:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/image_index.html`
 
-1.  **Visual Search Index:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/topics_to_images.html`
-2.  **Image Metadata:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/image_index.html`
-3.  **Articles List:** `https://Criscras13.github.io/API_image_testing/site_src/static/api/v2/help_center/en-us/experimental/articles.html`
+**Important:** Configure agents to search for **single keywords** (e.g., "smart" OR "group") rather than phrases when using the Topic Index.
 
-*Note: Ensure your agent uses a "Single Keyword" search strategy when querying the Topic Index.*
+### Sample Agent Workflows
+
+**General Support Questions:**
+1. Use `browse` tool on Articles List
+2. Find relevant article by title keywords
+3. Access article to get content + embedded image metadata
+4. Provide answer with clickable image links
+
+**Visual Search Questions:**
+1. Use `browse` tool on Visual Search Index
+2. Search for single keywords matching user query
+3. Extract Image IDs from matches
+4. Look up image details in article or Image Metadata
+
+---
+
+## 📖 Technical Documentation
+
+For implementation details, architecture, and AI enrichment pipeline:
+*   **[Technical Research Study](TECHNICAL_RESEARCH_STUDY.md)** - Complete technical overview
+
+---
+
+## 🛠 Local Development
+
+### Generate Indexes
+```bash
+python build_experimental_indexes.py
+```
+
+### Update Help Center Data
+```bash
+.\update-data.bat  # Windows
+./update-data.sh   # Linux/Mac
+```
+
+---
+
+## 📈 Current Statistics
+
+*   **Images Indexed:** 3,519
+*   **Articles Enhanced:** 1,004
+*   **Searchable Topics:** 640
+*   **Total Index Size:** ~40 MB (optimized)
+
+---
+
+## 🔄 Related Repositories
+
+*   **Production Source:** [API_testing](https://github.com/Criscras13/API_testing) (main branch)
+*   **Development Branch:** [phase8-testing-clean](https://github.com/Criscras13/API_testing/tree/phase8-testing-clean)
+
+---
+
+## 📝 License
+
+This is an experimental testing repository. Content is derived from KnowBe4 Help Center documentation.
